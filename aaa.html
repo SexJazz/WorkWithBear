@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17-beta.0/vue.common.js"></script>
+
+<body>
+	<div id="box">
+		<input type="range" min="0" max="255" v-model="r">{{r}} <br>
+		<input type="range" min="0" max="255" v-model="g">{{g}} <br>
+		<input type="range" min="0" max="255" v-model="b">{{b}} <br>
+		<input type="number" v-model="w"><br>
+		<input type="number" v-model="h"><br>
+		<div v-bind:style="{'width':w+'px','height':h+'px', background:'rgb('+r+','+g+','+b+')'}"></div>
+	</div>
+	<script>
+		new Vue({
+			el:"#box",
+			data:{
+				r:0,
+				g:0,
+				b:0,
+				w:100,
+				h:100
+			}
+		})
+	</script>
+</body>
+</html>
